@@ -24,23 +24,23 @@ import io
 import time
 
 # 日本語フォントをダウンロードする。
-!apt-get -y install fonts-ipafont-gothic
+#!apt-get -y install fonts-ipafont-gothic
 
 # キャッシュを削除する。
 # !rm /root/.cache/matplotlib/fontList.json　# 旧cache
-!rm /root/.cache/matplotlib/fontlist-v300.json # 消すべきcache
+#!rm /root/.cache/matplotlib/fontlist-v300.json # 消すべきcache
 
 # ランタイムを再起動する。
 
-!apt install aptitude
-!aptitude install mecab libmecab-dev mecab-ipadic-utf8 git make curl xz-utils file -y
-!pip install mecab-python3==0.7
+#!apt install aptitude
+#!aptitude install mecab libmecab-dev mecab-ipadic-utf8 git make curl xz-utils file -y
+#!pip install mecab-python3==0.7
 
 # ローカルファイルを直接アップロードする
-from google.colab import files
-uploaded = files.upload()
+#from google.colab import files
+#uploaded = files.upload()
 
-!unzip UniDic-kindai_1603.zip
+#!unzip UniDic-kindai_1603.zip
 
 import MeCab
 
