@@ -69,7 +69,7 @@ def preprocess_sentence(w):
     # 単語とそのあとの句読点の間にスペースを挿入
     # 例：　"he is a boy." => "he is a boy ."
     # 参照：- https://stackoverflow.com/questions/3645931/python-padding-punctuation-with-white-spaces-keeping-punctuation
-    w = re.sub(r"([?.!,¿])", r" \1 ", w)
+    w = re.sub(r"([?.!,¿。])", r" \1 ", w)
     w = re.sub(r'[" "]+', " ", w)
 
     # (a-z, A-Z, ".", "?", "!", ",") 以外の全ての文字をスペースに置き換え
@@ -83,8 +83,8 @@ def preprocess_sentence(w):
     w = '<start> ' + tagger.parse(w) + ' <end>'
     return w
 
-en_sentence = u"May I borrow this book?"
-sp_sentence = u"¿Puedo tomar prestado este libro?"
+en_sentence = u"僕は気をはつきりと持ちたい。"
+sp_sentence = u"僕は気をはっきりと持ちたい。?"
 print(preprocess_sentence(en_sentence))
 print(preprocess_sentence(sp_sentence).encode('utf-8'))
 
