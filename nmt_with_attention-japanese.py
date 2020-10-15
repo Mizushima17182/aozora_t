@@ -79,6 +79,7 @@ def preprocess_sentence(w):
 
     # 文の開始と終了のトークンを付加
     # モデルが予測をいつ開始し、いつ終了すれば良いかを知らせるため
+    #　Unidic-kindai_1603はunidicのある場所のパスを指定すること
     tagger = MeCab.Tagger("-Owakati -d UniDic-kindai_1603")
     w = '<start> ' + tagger.parse(w) + ' <end>'
     return w
