@@ -46,16 +46,12 @@ import MeCab
 
 # 対訳ファイルのダウンロード
 # ローカルファイルを直接アップロードする
-from google.colab import files
-uploaded = files.upload()
+#from google.colab import files
+#uploaded = files.upload()
 
- 
-
-ls
-
+#ls
 
 path_to_file = "./jpn.txt"
-
 
 # ユニコードファイルを ascii に変換
 def unicode_to_ascii(s):
