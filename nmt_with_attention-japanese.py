@@ -62,10 +62,10 @@ def unicode_to_ascii(s):
 def preprocess_sentence(w):
     w = unicode_to_ascii(w.lower().strip())
 
-    # 単語とそのあとの句読点の間にスペースを挿入
+    # 単語とそのあとの句読点の間にスペースを挿入 、を追加　。もたぶん
     # 例：　"he is a boy." => "he is a boy ."
     # 参照：- https://stackoverflow.com/questions/3645931/python-padding-punctuation-with-white-spaces-keeping-punctuation
-    w = re.sub(r"([?.!,¿。])", r" \1 ", w)
+    w = re.sub(r"([?.!,¿。、])", r" \1 ", w)
     w = re.sub(r'[" "]+', " ", w)
 
     # (a-z, A-Z, ".", "?", "!", ",") 以外の全ての文字をスペースに置き換え
